@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SkillsItem from './SkillsItem'
+import SkillsButton from './SkillsButton'
 // import Auth from 'j-toker';
 // import { IndexLink, Link } from 'react-router';
 
@@ -69,13 +70,7 @@ class Skills extends Component {
           <div role="tabpanel" className="tab-pane my-tab step-1-open" id="skills">
             <div className="steps-nav flexbox justify-space-between">
               <div className="steps-nav-title">Your Shared Skills</div>
-              <div className="steps-nav-btn">
-                <div className="btn-group step-2-btn clearfix">
-                  <button type="button" className="btn btn-blue-border btn-bold step-1-toggler step-toggler">Back</button>
-                  <button type="button" className="btn btn-blue btn-bold step-3-toggler step-toggler">Done</button>
-                </div>
-                <button type="button" className="btn btn-blue btn-bold step-3-btn step-1-toggler step-toggler">Add</button>
-              </div>
+              <SkillsButton />
             </div>
           </div>
           <div className="step-3">
