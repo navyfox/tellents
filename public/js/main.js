@@ -11,7 +11,7 @@ Tellents.data.teams = {
     // PROFILE PAGE ==>
 
     initProfilePage: function () {
-    	
+
         this.initToggleJobsItems();
         this.initJobFinishContentToggle();
         this.initBidInfoToggle();    
@@ -76,7 +76,7 @@ Tellents.data.teams = {
                 bidItems.removeClass('open');
                 targetBidItem.toggleClass('open');
             }
-            
+
         });
     },
 
@@ -90,7 +90,7 @@ Tellents.data.teams = {
 
             thisParent.height(height);
         })
-        
+
     },
 
     initBidItemHeightAfterResize: function(){
@@ -416,9 +416,9 @@ Tellents.data.teams = {
                     } else {
                         $(this).addClass('right-details');
                     }
-                    
+
                 }
-                
+
             });
 
             closeBtn.on('click', function(){

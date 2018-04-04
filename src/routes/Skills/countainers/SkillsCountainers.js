@@ -1,22 +1,23 @@
 import { connect } from 'react-redux'
-import { loginUser } from '../modules/login'
-import Login from '../components/Login'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
     wiring in the actions and state necessary to render a presentational
     component - in this case, the counter:   */
 
+import Skills from '../components/Skills'
+import { getMySkills } from '../modules/skills'
+
 /*  Object of action creators (can also be function that returns object).
     Keys will be passed as props to presentational components. Here we are
     implementing our wrapper around increment; the component doesn't care   */
 
 const mapDispatchToProps = {
-  loginUser,
-};
+  getMySkills,
+}
 
 const mapStateToProps = (state) => ({
-  user : state.user
+  skills : state.skills
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
@@ -33,12 +34,4 @@ const mapStateToProps = (state) => ({
     Selectors are composable. They can be used as input to other selectors.
     https://github.com/reactjs/reselect    */
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
-
-
-// const mapStateToProps = (state) => ({state: state.user});
-// const mapDispatchToProps = (dispatch) => (bindActionCreators({
-//   loginUser,
-// }, dispatch));
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Skills)

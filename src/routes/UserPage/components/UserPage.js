@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Auth from 'j-toker';
 import { IndexLink, Link } from 'react-router';
 
-class Login extends Component {
+class UserPage extends Component {
   render () {
     return (
       <div className='container text-center'>
@@ -16,4 +16,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default UserPage;

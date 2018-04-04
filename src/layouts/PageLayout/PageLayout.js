@@ -2,12 +2,19 @@ import React from 'react'
 import { IndexLink, Link } from 'react-router'
 import PropTypes from 'prop-types'
 import './PageLayout.scss'
+import { Api } from '../../api'
 
 class PageLayout extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
     };
+  }
+  
+  handleLogOut = () => {
+    Api.logout();
+    console.log('logout');
+    // this.props.router.push('/')
   }
 
   render () {
@@ -73,10 +80,8 @@ class PageLayout extends React.Component {
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                    aria-expanded="false">Philip Seamor<span className="caret"></span></a>
                 <ul className="dropdown-menu">
-                  <li><a href="#">Action</a></li>
+                  <li><a className='log_out' onClick={this.handleLogOut}>LOG OUT</a></li>
                   <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li><a href="#">One more separated link</a></li>
                 </ul>
               </div>
             </div>

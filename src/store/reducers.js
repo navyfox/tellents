@@ -6,6 +6,7 @@ export const makeRootReducer = (asyncReducers) => {
   return combineReducers({
     location: locationReducer,
     form: formReducer,
+    // user: userReducer,
     ...asyncReducers
   })
 }

@@ -3,20 +3,25 @@ import CoreLayout from '../layouts/PageLayout/PageLayout'
 import Home from './Home'
 import Login from './Login'
 import CounterRoute from './Counter';
+import LoginRoute from  './Login';
+import HomeRoute from  './Home';
+import SkillsRoute from  './Skills';
 import UserPage from './UserPage';
 import Skills from './Skills';
+import AddSkilsStep1 from './Skills/components/AddSkilsStep1'
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
 
 export const createRoutes = (store) => ({
   path        : '/',
   component   : CoreLayout,
-  indexRoute  : Home,
+  indexRoute  : HomeRoute(store),
   childRoutes : [
     CounterRoute(store),
+    LoginRoute(store),
     {
       path: 'login',
-      indexRoute: Login
+      indexRoute: Login,
     },
     {
       path: 'userpage',
@@ -24,7 +29,14 @@ export const createRoutes = (store) => ({
     },
     {
       path: 'skills',
-      indexRoute: Skills
+      indexRoute: SkillsRoute(store),
+      childRoutes: [
+        CounterRoute(store),
+        {
+          path: 'skills-add-step1',
+          indexRoute: AddSkilsStep1,
+        },
+      ]
     },
   ]
 })
