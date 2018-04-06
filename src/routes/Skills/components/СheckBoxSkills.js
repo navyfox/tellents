@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Field } from 'react-final-form'
 
 class CheckBoxSkills extends Component {
   constructor (props) {
@@ -9,10 +10,16 @@ class CheckBoxSkills extends Component {
   render () {
     return (
         <div className="checkbox-block">
-          <input type={this.props.type} name={this.props.categories} id={this.props.id}/>
+          <Field
+            type={this.props.type}
+            name={this.props.name}
+            id={this.props.id}
+            value={this.props.id}
+            component={this.props.component}
+          />
           <label htmlFor={this.props.id}>
             <span className="checkbox-circle">
-              <span className="icon icon-check-mark"></span>
+              <span className="icon icon-check-mark" />
             </span>
             <span className="checkbox-text">{this.props.name}</span>
           </label>

@@ -34,7 +34,7 @@ class PageLayout extends React.Component {
                   <input type="text" className="form-control" placeholder="Search"/>
                   <div className="search-filter radio-block">
                     <div className="radio">
-                      <input type="radio" name="profile-page-filter" id="jobs-filter" value="jobs-filter" checked/>
+                      <input type="radio" name="profile-page-filter" id="jobs-filter" value="jobs-filter"/>
                       <label htmlFor="jobs-filter">
                         <span className="radio-text">Jobs</span>
                       </label>

@@ -13,12 +13,12 @@ class SkillsItem extends Component {
       <div className='skill-subcat skill-subcat--item'>
         <div className='flexbox justify-space-between'>
           <div className='skill-block'>
-            <div className='skill-block-title'>{this.props.title}</div>
+            <div className='skill-block-title'>{this.props.profession.name}</div>
             <div className='skill-block-list'>
-              <SkillsList />
+              <SkillsList categories={this.props.profession.skill_categories}/>
             </div>
           </div>
-          <SkillsTag />
+          <SkillsTag tags={this.props.profession.skill_tags}/>
         </div>
         <div className="skill-block-footer">
           <a href="#">View More</a>

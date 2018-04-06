@@ -17,7 +17,7 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = (state) => ({
-  skills : state.skills
+  profession_categories : state.skills.profession_categories
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:

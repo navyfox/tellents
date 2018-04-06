@@ -12,22 +12,31 @@ class Skills extends Component {
       step: 0,
     };
   }
+  
+  componentDidMount() {
+    this.props.getMySkills();
+  }
 
   handleAdd = () => {
     this.setState({
       isOneButton: !this.state.isOneButton,
       step: 1,
     })
-    this.props.router.push('./');
+    // this.props.router.push('./');
   };
   
   render () {
+    let categories = Object.assign({...this.props.profession_categories})
     let content;
     if (this.state.step === 0) {
-      content = <SkillsItem />;
+      content = Object.keys(categories).map(key => {
+      if (categories[key].selected) {
+        return (<SkillsItem profession={categories[key]} key={categories[key].id}/>)
+      }
+      });
     }
     if (this.state.step === 1) {
-      content = <AddSkilsStep1 />;
+      content = <AddSkilsStep1 categories={categories}/>;
     }
     return (
       <div className='flexbox'>
